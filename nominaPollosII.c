@@ -22,7 +22,7 @@ int main(int argc, char const *argv[]) {
 
 	mercado tabla[15];
 
-	llenaTablaMercado(tablaMercado);
+	llenaTablaMercado(tabla);
 
 	/*
 
