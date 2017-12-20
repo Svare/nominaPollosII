@@ -88,6 +88,8 @@ int main(int argc, char const *argv[]) {
 
 	printf("Ganancia Final = %.2f\n",kilosPollo*factor);
 
+	getchar();
+	getchar();
 
 	return 0;
 }

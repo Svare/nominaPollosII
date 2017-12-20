@@ -1,5 +1,5 @@
 
-void llenaTablaMercado(mercado tablaBonos[]){
+void llenaTablaMercado(mercado tabla[]){
 
 	tabla[0].edadPromedio = 48;
 	tabla[0].gananciaDiaria = 51.5;
