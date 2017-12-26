@@ -12,6 +12,8 @@ int main(int argc, char const *argv[]) {
 // DATOS DE ENTRADA
 
 	int edadPromedio;
+	double kilosAlimento;
+	double pesoPromedio;
 	double gananciaDiaria; // Debe estar en Kilos para que funcione de acuerdo a lo que se indica en tabla
 	double conversion;
 	double kilosPollo;
@@ -47,14 +49,22 @@ int main(int argc, char const *argv[]) {
 	printf("\to Edad Promedio/Venta [Entero]: ");
 	scanf("%d",&edadPromedio);
 
-	printf("\to Ganancia Diaria: ");
-	scanf("%lf",&gananciaDiaria);
+	printf("\to Peso Promedio [Gramos]: ");
+	scanf("%lf",&pesoPromedio);
 
-	printf("\to Conversion: ");
-	scanf("%lf",&conversion);
+	printf("\to Kilogramos de Alimento: ");
+	scanf("%lf",&kilosAlimento);
 
 	printf("\to Kilogramos de Pollo: ");
 	scanf("%lf",&kilosPollo);
+
+// CALCULO CONVERSION Y GANANCIA DIARIA
+
+	conversion = kilosAlimento/kilosPollo;
+	gananciaDiaria = pesoPromedio/edadPromedio;
+
+	printf("\n\to Conversion: %f",conversion);
+	printf("\n\to Ganancia Diaria: %f\n",gananciaDiaria);
 
 // OBTENCION DE LOS PARAMETROS POR TABLA MERCADO A PARTIR DE LA EDAD PROMEDIO/VENTA
 
@@ -98,16 +108,18 @@ int main(int argc, char const *argv[]) {
 	factorConversion = (diferenciaConversion/0.01)*0.02; // Hay que dividir en
 
 	printf("CALCULO DE LOS FACTORES DE GANANCIA DIARIA Y CONVERSION\n\n");
-	printf("Factor Ganancia Diaria: %.4f\nFactor Conversion: %.4f\n\n",factorGananciaDiaria,factorConversion);
+	printf("\t~ Factor Base: 1.20\n\t~ Factor Ganancia Diaria: %f\n\t~ Factor Conversion: %f\n\n",factorGananciaDiaria,factorConversion);
 
 	factor = FACTORBASE + factorGananciaDiaria + factorConversion;
 
-	printf("PAGO DE LA PARVADA\n\n");
-	printf("Factor Base * Kilogramos de Pollo = 1.2 * %.2f = %.2f\n",kilosPollo,kilosPollo*1.20);
-	printf("Factor Ganancia Diaria * Kilogramos de Pollo = %.4f * %.2f = %.2f\n",factorGananciaDiaria,kilosPollo,kilosPollo*factorGananciaDiaria);
-	printf("Factor Conversion * Kilogramos de Pollo = %.4f * %.2f = %.2f\n\n",factorConversion,kilosPollo,kilosPollo*factorConversion);
+	printf("\t~ Factor Total: %f\n\n",factor);
 
-	printf("Ganancia Final = %.2f\n",kilosPollo*factor);
+	printf("PAGO DE LA PARVADA\n\n");
+	printf("\t-> Factor Base * Kilogramos de Pollo = 1.2 * %.2f = %.2f\n",kilosPollo,kilosPollo*1.20);
+	printf("\t-> Factor Ganancia Diaria * Kilogramos de Pollo = %.4f * %.2f = %.2f\n",factorGananciaDiaria,kilosPollo,kilosPollo*factorGananciaDiaria);
+	printf("\t-> Factor Conversion * Kilogramos de Pollo = %.4f * %.2f = %.2f\n\n",factorConversion,kilosPollo,kilosPollo*factorConversion);
+
+	printf("\t-> Ganancia Final = %.2f\n",kilosPollo*factor);
 
 	getchar();
 	getchar();
