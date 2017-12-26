@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]) {
 // DATOS DE ENTRADA
 
 	int edadPromedio;
-	double gananciaDiaria;
+	double gananciaDiaria; // Debe estar en Kilos para que funcione de acuerdo a lo que se indica en tabla
 	double conversion;
 	double kilosPollo;
 
@@ -85,7 +85,7 @@ int main(int argc, char const *argv[]) {
 
 	printf("DIFERENCIAS A FAVOR/EN CONTRA");
 	printf("\n\n\t* Ganancia Diaria: %f [GRAMOS]\tPuntos: %f\n\t* Conversion: %f []\tPuntos: %f\n\n",
-		diferenciaGananciaDiaria,diferenciaGananciaDiaria/0.01,diferenciaConversion,diferenciaConversion/0.01);
+		diferenciaGananciaDiaria,diferenciaGananciaDiaria,diferenciaConversion,diferenciaConversion/0.01);
 
 	// Aqui se calcula cuanto sube o baja el factor dependiendo de la ganancia diaria y de la conversion
 
@@ -94,8 +94,8 @@ int main(int argc, char const *argv[]) {
 
 	// Edad de venta es promedio ponderado
 
-	factorGananciaDiaria = (diferenciaGananciaDiaria)*0.03; // Aqui si son los puntos 
-	factorConversion = (diferenciaConversion/0.01)*0.020; // Hay que dividir en
+	factorGananciaDiaria = diferenciaGananciaDiaria*0.03; // Aqui si son los puntos 
+	factorConversion = (diferenciaConversion/0.01)*0.02; // Hay que dividir en
 
 	printf("CALCULO DE LOS FACTORES DE GANANCIA DIARIA Y CONVERSION\n\n");
 	printf("Factor Ganancia Diaria: %.4f\nFactor Conversion: %.4f\n\n",factorGananciaDiaria,factorConversion);
